@@ -6,13 +6,16 @@ import org.json.simple.JSONObject;
 
 public class Util {
 
+  /*
+   * resultSet to JSONArray.
+   */
   @SuppressWarnings("unchecked")
   public static JSONArray convertToJSON(ResultSet resultSet) throws Exception {
     JSONArray jsonArray = new JSONArray();
     while (resultSet.next()) {
-      int total_rows = resultSet.getMetaData().getColumnCount();
-      System.out.println("total_rows = " + total_rows);
-      for (int i = 0; i < total_rows; i++) {
+      int total_col = resultSet.getMetaData().getColumnCount();
+      System.out.println("total_column = " + total_col);
+      for (int i = 0; i < total_col; i++) {
         JSONObject obj = new JSONObject();
         obj.put(resultSet.getMetaData().getColumnLabel(i + 1).toLowerCase(),
             resultSet.getObject(i + 1));
@@ -22,6 +25,9 @@ public class Util {
     return jsonArray;
   }
 
+  /*
+   * return to value from JSONArray.
+   */
   public static Object getKey(JSONArray array, String key) {
     Object value = null;
     for (int i = 0; i < array.size(); i++) {
