@@ -19,10 +19,10 @@ public class AergoJDBCConnect {
 
     String aergoClassDriverName = "org.aergojdbc.JDBC";
     String network_url = "jdbc:aergo:alpha1.aergo.io:7845";
-    String contractAddress = "AmhFEFfwsRxDkA8DFBCiYMRZWvFrFxjMG3jgCSrzcJPScNyxNHAu";
+    String contractAddress = "AmgPVZfrYiKP8k7cxU8HuSGoCWgjwhwYeuRGR8NGBewCBbH4CFVL";
     String encryptedPassword =
-        "47GmLQcuU6Ztq47EdaEHE1e7BPWTxMQWBcqVCUnBZSDK8V5jUErppAN5expUeUKJYExxB1dXE";
-    String password = "12";
+        "47L5pSrb4r9WYMtrQh3ReF9DLoe4pFmeHWQ1dSJPTijYt7QquydQfnPeNHyQ9nE5xm1DZG3NW";
+    String password = "1234";
 
     StringBuilder sb = new StringBuilder();
     String aergojdbc_url = sb.append(network_url).append("@").append(contractAddress).toString();
