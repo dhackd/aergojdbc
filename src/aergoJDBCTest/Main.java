@@ -13,11 +13,7 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
 
-    // Main main = new Main();
-    // Thread t1 = new Thread(main);
-    // t1.start();
-//     insert("111-111-111", "korea power", "10", "90", "0", "20191226", "50", "1");
-
+    // insert("111-111-111", "korea power", "10", "90", "0", "20191226", "50", "1");
     // findTotalRownum();
     // findAll();
     findByDeviceId("111-111-111");
@@ -27,8 +23,6 @@ public class Main {
   @SuppressWarnings("unused")
   private static void summarySupplier() throws SQLException {
     String sql = "select sum(supplier) from customer_gas_usage_tbl group by device_id";
-
-
   }
 
   @SuppressWarnings("unused")
@@ -59,13 +53,11 @@ public class Main {
     System.out.println(ja.toJSONString());
 
     /*
-     * key값 기준으로 value 리턴
-     * ex : key("total_flow")
+     * key값 기준으로 value 리턴 ex : key("total_flow")
      */
     Object obj = new Object();
     obj = Util.getKey(ja, "total_flow");
-    System.out.println("key is value = "+obj);
-
+    System.out.println("key is value = " + obj);
   }
 
   @SuppressWarnings("unused")
@@ -107,23 +99,4 @@ public class Main {
       System.out.println("prsessure = " + rs.getString("prsessure"));
     }
   }
-
-//  @Override
-//  public void run() {
-//    int tmp = 0;
-//    for (int i = 0; i < 1000; i++) {
-//      try {
-//        tmp = i + 21;
-//        System.out.println("running.... tmp = " + tmp);
-//        Thread.sleep(1000);
-//        System.out.println("sleep... " + i + "sec");
-//        insert(Integer.toString(tmp), Integer.toString(tmp), Integer.toString(tmp),
-//            Integer.toString(tmp), Integer.toString(tmp), Integer.toString(tmp),
-//            Integer.toString(tmp), Integer.toString(tmp));
-//      } catch (InterruptedException e) {
-//        // TODO Auto-generated catch block
-//        e.printStackTrace();
-//      }
-//    }
-//  }
 }
